@@ -1,13 +1,18 @@
 require 'sinatra/base'
 
-Given(/^I am on the homepage$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^click on submit$/) do
+  click_on("Submit")
 end
 
 Then(/^I enter my name$/) do
-  pending # express the regexp above with the code you wish you had
+  fill_in('name', with: 'name')
 end
 
 Then(/^I will see a welcome greeting$/) do
-  pending # express the regexp above with the code you wish you had
+  page.has_content?("Welcome")
 end
+
+Then(/^I will see "(.*?)"$/) do |arg1|
+  page.has_content?(arg1)
+end
+

@@ -1,0 +1,21 @@
+Want to play Rock, Paper, Scissors? 
+
+Please enter your name: 
+
+<% if @name == "" %>
+Please enter a valid name...
+	<form action="/index">
+		<input type="text" name="name">
+		<input type="submit" value="Submit">
+	</form>
+
+<% elsif @name %>
+Welcome to Rock, Paper, Scissors... Good luck.
+<a href="/game">Let's Go!</a>
+
+<% else %>
+	<form action="/index">
+		<input type="text" name="name">
+		<input type="submit" value="Submit">
+	</form>
+<% end %>
