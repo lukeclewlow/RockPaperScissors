@@ -12,11 +12,10 @@ Feature: Playing a game
 	Scenario: Playing simple game(winning)
 		Given I am on the game page
 		And I click on the "Rock" button
-		Then I will see a "You Win!" message
+		Then I will see either "You Win!" or "Loser!" or "Draw"
 
 	Scenario: Playing simple game(losing)
 		Given I am on the game page
 		And I click on the "Paper" button
-		Then I will see a "Loser!" message
+		Then I will see either "You Win!" or "Loser!" or "Draw"
 
-	
