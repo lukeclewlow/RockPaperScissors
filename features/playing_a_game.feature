@@ -18,3 +18,5 @@ Feature: Playing a game
 		Given I am on the game page
 		And I click on the "Paper" button
 		Then I will see a "Loser!" message
+
+	
