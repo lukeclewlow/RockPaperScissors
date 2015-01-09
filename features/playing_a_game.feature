@@ -9,10 +9,12 @@ Feature: Playing a game
 		And click on submit
 		Then I will see a welcome greeting
 
-	Scenario: Playing simple game
+	Scenario: Playing simple game(winning)
 		Given I am on the game page
-		And I click on the "Rock" link
-		Then I will see a winning message
+		And I click on the "Rock" button
+		Then I will see a "You Win!" message
 
-	
-	
+	Scenario: Playing simple game(losing)
+		Given I am on the game page
+		And I click on the "Paper" button
+		Then I will see a "Loser!" message
