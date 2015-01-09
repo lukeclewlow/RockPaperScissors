@@ -9,9 +9,10 @@ Feature: Playing a game
 		And click on submit
 		Then I will see a welcome greeting
 
-	Scenario: Entering name (no name given)
-		Given I am on the homepage
-		And click on submit
-		Then I will see "Please enter a valid name... "
+	Scenario: Playing simple game
+		Given I am on the game page
+		And I click on the "Rock" link
+		Then I will see a winning message
 
+	
 	
