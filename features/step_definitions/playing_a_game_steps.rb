@@ -1,7 +1,7 @@
 require 'sinatra/base'
 
 Then(/^click on submit$/) do
-  click_on("Submit")
+  click_on("Fight!")
 end
 
 Then(/^I enter my name$/) do
@@ -28,3 +28,6 @@ Given(/^I click on the "(.*?)" button$/) do |arg1|
   click_button(arg1)
 end
 
+Then(/^I will see either "(.*?)" or "(.*?)" or "(.*?)"$/) do |arg1, arg2, arg3|
+ 	expect(page).to have_content(arg1)
+end

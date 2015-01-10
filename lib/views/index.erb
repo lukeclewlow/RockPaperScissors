@@ -1,15 +1,26 @@
-<% if @name %>
-Welcome to Rock, Paper, Scissors <% p "#{@name}" %>... Good luck.
-<a href="/game">Let's Go!</a>
+<!DOCTYPE html>
 
-<% else %>
+<html>
 
-Want to play Rock, Paper, Scissors? 
+	<head>
+		<title>Rock vs Paper vs Scissors</title>
+		<link type="text/css" rel="stylesheet" href="normalize.css"/>
+		<link type="text/css" rel="stylesheet" href="mystyle.css"/>
+	</head>
 
-Please enter your name: 
+	<body>
+	<p>
+	<h1>ROCK VS PAPER VS SCISSORS</h1>
+		
 
-	<form action="/">
-		<input type="text" name="name">
-		<input type="submit" value="Submit">
-	</form>
-<% end %>
+			<form action="/game">
+				<input type="text" name="name" placeholder="Enter your name...">
+				<input type="submit" value="Fight!">
+			</form>
+
+	<h1>Wanna battle!?</h1>
+
+	</p>
+	</body>
+
+</html>
