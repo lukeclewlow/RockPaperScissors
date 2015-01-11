@@ -1,9 +1,9 @@
-require './lib/game'
+require 'game'
 
 	describe "Game" do
 		
-		context "it should be able to select rock" do
-			
+		it "should be contain the options at the start" do
+			expect(game.options.length).to eq 3
 		end
 
 
