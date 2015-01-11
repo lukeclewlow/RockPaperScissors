@@ -5,7 +5,7 @@ describe "Computer" do
 	let(:computer) {Computer.new}	
 
 	it "should be able to pick an item" do
-		expect(computer.make_a_choice(Rock)).to eq computer.choice
+		expect(computer.make_a_choice(Rock)).to eq computer.computers_choice
 	end
 
 end

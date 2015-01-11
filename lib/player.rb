@@ -1,11 +1,9 @@
 class Player
 
-	def choice(selection)
-		@choice = selection.new
-	end
+	attr_reader :choice
 
-	def show_choice
-		@choice
-	end
+	def make_choice(selection)
+		@choice = selection.new
+	end	
 
 end	

@@ -7,7 +7,7 @@ describe "Player" do
   let(:rock)	  		{Rock.new}
 
   it "should be able to make a selection" do
-  	expect(player.choice(Rock)).to eq player.show_choice
+  	expect(player.make_choice(Rock)).to eq player.choice
   end
 
 end
