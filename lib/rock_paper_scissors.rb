@@ -1,6 +1,14 @@
-require 'sinatra/base'
+  require 'sinatra/base'
+  require_relative './game.rb'
+  require_relative './player.rb'
+  require_relative './computer.rb'
+  require_relative './rock.rb'
+  require_relative './paper.rb'
+  require_relative './scissors.rb'
 
 class RockPaperScissors < Sinatra::Base
+
+  GAME = Game.new
 
   get '/' do
   	@name = params[:name]
@@ -8,16 +16,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
 	get '/game' do
+    GAME.add_player(Player, Computer)
   	erb :game
   end
 
   post '/game' do
-  	choices = ["Rock", "Paper", "Scissors"]
-  	@choice = choices.sample
   	@rock = params[:rock] ; @paper = params[:paper] ; @scissors = params[:scissors]
-  	@player_chosen = create_player_choice(@rock, @paper, @scissors)
-  	redirect '/draw' if @player_chosen[0] == @choice 
-  	calculate(@player_chosen, @choice)
+    @player_chosen = [@rock, @paper, @scissors].compact
+    GAME.player2.make_a_choice(GAME.random_option)
+    GAME.player1.make_choice(eval(@player_chosen[0]))
+    redirect '/draw' if GAME.outcome == "Draw!"
+    redirect '/win' if GAME.outcome.class == Player
+    redirect '/lose' if GAME.outcome.class == Computer
   	erb :game
   end
 
@@ -32,23 +42,6 @@ class RockPaperScissors < Sinatra::Base
   get '/draw' do
   	erb :draw
   end
-
-  def calculate(p, c)
-  	redirect '/lose' if p[0] == "Rock" && c == "Paper"
-  	redirect '/lose' if p[0] == "Paper" && c == "Scissors"
-  	redirect '/lose' if p[0] == "Scissors" && c == "Rock"
-  	redirect '/win'  if p[0] == "Rock" && c == "Scissors"
-  	redirect '/win'  if p[0] == "Paper" && c == "Rock"
-  	redirect '/win'  if p[0] == "Scissors" && c == "Paper"
-  	redirect '/draw' if p[0] == c
-  end
-
-
-  def create_player_choice(r, p, s)
-  	@player_choice = r, p, s
-  	@player_choice.compact
-  end
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0
