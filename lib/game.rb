@@ -2,11 +2,16 @@ class Game
 
 	attr_reader :player1
 	attr_reader :player2
+	attr_reader :options
 
 	def initialize
-		@options = ["Rock", "Paper", "Scissors"]
+		@options = [Rock, Paper, Scissors]
 		@player1 = nil
 		@player2 = nil
+	end
+
+	def random_option
+		@options.sample
 	end
 
 	def options
