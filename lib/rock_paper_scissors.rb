@@ -24,10 +24,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/game' do
-  	@rock = params[:rock] ; @paper = params[:paper] ; @scissors = params[:scissors]
-    @player_chosen = [@rock, @paper, @scissors].compact
+  	@choice = params[:choice]
+    raise "invalid choice" unless %w(Rock Paper Scissors).include? @choice
     GAME.player2.make_a_choice(GAME.random_option)
-    GAME.player1.make_choice(eval(@player_chosen[0]))
+    GAME.player1.make_choice((eval@choice))
     redirect '/draw' if GAME.outcome == "Draw!"
     redirect '/win' if GAME.outcome.class == Player
     redirect '/lose' if GAME.outcome.class == Computer

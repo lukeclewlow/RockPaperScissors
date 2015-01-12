@@ -9,13 +9,7 @@ Feature: Playing a game
 		And click on submit
 		Then I will see a welcome greeting
 
-	Scenario: Playing simple game(winning)
+	Scenario: Playing simple game
 		Given I am on the game page
 		And I click on the "Rock" button
 		Then I will see either "YOU WIN!!!!!" or "LOSER!!!" or "DRAW!!!"
-
-	Scenario: Playing simple game(losing)
-		Given I am on the game page
-		And I click on the "Paper" button
-		Then I will see either "YOU WIN!!!!!" or "LOSER!!!" or "DRAW!!!"
-
