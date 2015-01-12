@@ -22,6 +22,10 @@ class Game
 		@player1 = player.new ; @player2 = computer.new
 	end
 
+	def show_computers_choice
+		@player2.computers_choice
+	end
+
 	def outcome
 		return "Draw!" if player1.choice.class == player2.computers_choice.class
 		return player1 if player1.choice.won?(player2.computers_choice)

@@ -7,7 +7,7 @@
   require_relative './scissors.rb'
 
 class RockPaperScissors < Sinatra::Base
-
+  
   set :public_dir, Proc.new{File.join(root, '..', "public")}
   set :public_folder, 'public'  
 
@@ -35,14 +35,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/win' do
+    @choice = GAME.show_computers_choice
   	erb :win
   end
 
   get '/lose' do
+    @choice = GAME.show_computers_choice
   	erb :lose
   end
 
   get '/draw' do
+    @choice = GAME.show_computers_choice
   	erb :draw
   end
 
