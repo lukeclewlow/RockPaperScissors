@@ -29,5 +29,5 @@ Given(/^I click on the "(.*?)" button$/) do |arg1|
 end
 
 Then(/^I will see either "(.*?)" or "(.*?)" or "(.*?)"$/) do |arg1, arg2, arg3|
- 	expect(page).to have_content(arg1)
+ 	(expect(page).to have_content(arg1)) || (expect(page).to have_content(arg2))
 end

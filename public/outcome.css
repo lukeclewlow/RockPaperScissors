@@ -15,45 +15,15 @@ html, body {
   line-height: 26.3999996185303px;
 }
 
-form {
-  margin: 20px;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  display: inline-table;
-  text-align: center;
-}
-
 h1 {
   text-align: center;
   color: white;
   padding: 60;
 }
 
-button {
-  position: center;
-  padding: 0px;
-  background-color: black;
-  border: 0;
-  width: 300;
-  height: 285;
-  margin: 40px 0px 0px 0px;
-  border: 7px solid white;
-  border-radius: 100px;  
-}
-
-.icon {
-  opacity: .5;
-  transition: all 0.3s ease 0s
-}
-
-.icon:hover {
-  opacity: 1;
-}
-
-#choices {
-  background-size: 0px;
-  margin: 1em;
-  height: 185;
-  width: 200;
-  top: 200; left: 100; bottom: 0; right: 100;
+h2 {
+  text-align: center;
+  color: white;
+  padding: 60;
+  margin: 200;
 }
