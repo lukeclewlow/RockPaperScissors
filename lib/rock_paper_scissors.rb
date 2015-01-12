@@ -35,17 +35,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/win' do
-    @choice = GAME.show_computers_choice
+    @computers_choice = GAME.show_computers_choice
   	erb :win
   end
 
   get '/lose' do
-    @choice = GAME.show_computers_choice
+    @computers_choice = GAME.show_computers_choice
   	erb :lose
   end
 
   get '/draw' do
-    @choice = GAME.show_computers_choice
+    @computers_choice = GAME.show_computers_choice
   	erb :draw
   end
 

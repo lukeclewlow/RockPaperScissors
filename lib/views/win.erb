@@ -9,15 +9,21 @@
 	</head>
 
 	<body>
-	<p>
-	<h1>ROCK VS PAPER VS SCISSORS</h1>
 
 	<h2>YOU WIN!!!!!</h2>
-	<h3>Computer chose <%= @choice.class %></h3>
+	<h3>Computer chose <%= @computers_choice.class %></h3>
+	
+	<section id="selections">
+	<%if @computers_choice.class == Rock %>
+	<img src="rock.jpg" width="300" height="285" />
+	<%elsif @computers_choice.class == Paper %>
+	<img src="paper.jpg" width="300" height="285" />
+	<%else @computers_choice.class == Scissors %>
+	<img src="scissors.jpg" width="300" height="285" />
+	<% end %>
+	</section>
 
 	<a href='/game'>Play Again!</a>
 
-	</p>
 	</body>
 	</html>
-
